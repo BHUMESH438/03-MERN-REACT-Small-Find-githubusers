@@ -2,15 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { GithubContext, useGitContext } from '../context/context';
 import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
+
 const Repos = () => {
   const { repos } = useGitContext();
   let languages = repos.reduce((acc, crr) => {
+    // lang !== null; dynamicobj['key'] = value
     if (crr['language']) {
       acc[crr['language']] = acc[crr['language']] + 1 || 1;
     }
     return acc;
   }, {});
-  console.log(languages);
+
   // STEP 2 - Chart Data
   const chartData = [
     {
