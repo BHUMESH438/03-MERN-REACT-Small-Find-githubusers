@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const Followers = () => {
   const { follwers } = useGitContext();
-  console.log(follwers);
   return (
     <Wrapper>
       <div className='followers'>

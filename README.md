@@ -125,3 +125,17 @@ package.json
 - json to js obj conversion json.parse(), converter
 - backend req/sec limitor
 - styled componenet
+- react proppassing
+- reduce method
+- Dynamic obj keys
+- || and null
+
+```js
+let languages = repos.reduce((acc, crr) => {
+  if (crr['language']) {
+    acc[crr['language']] = acc[crr['language']] + 1 || 1;
+  }
+  return acc;
+}, {});
+console.log(languages);
+```
