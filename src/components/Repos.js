@@ -5,7 +5,6 @@ import { Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
 
 const Repos = () => {
   const { repos } = useGitContext();
-  console.log(repos);
   //value will be returned as language={label,value,stars}
   const languages = repos.reduce((acc, crr) => {
     const { language, stargazers_count } = crr;
@@ -15,7 +14,7 @@ const Repos = () => {
         ...acc[language],
         label: language,
         value: acc[language] ? acc[language].value + 1 : 1,
-        stars: acc[stargazers_count] ? acc[stargazers_count].stars + 1 : 1
+        stars: acc[language] ? acc[language].stars + stargazers_count : stargazers_count
       };
     }
     return acc;
