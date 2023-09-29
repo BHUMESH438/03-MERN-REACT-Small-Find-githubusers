@@ -21,14 +21,14 @@ const ChartComponent = ({ data }) => {
   // STEP 3 - Creating the JSON object to store the chart configurations
   const chartConfigs = {
     type: 'column2d', // The chart type
-    width: '400', // Width of the chart
+    width: '100%', // Width of the chart
     height: '400', // Height of the chart
     dataFormat: 'json', // Data type
     dataSource: {
       // Chart Configuration
       chart: {
         //Set the chart caption
-        caption: 'Countries With Most Oil Reserves [2017-18]',
+        caption: 'Most used languages',
         //Set the chart subcaption
         subCaption: 'In MMbbl = One Million barrels',
         //Set the x-axis name

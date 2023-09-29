@@ -129,6 +129,10 @@ package.json
 - reduce method
 - Dynamic obj keys
 - || and null
+- await and then use any one
+- fetch and axios
+- async
+  [use this gpt link for query](https://chat.openai.com/share/7325b207-d0f9-4954-8171-7bf3744fdeaf)
 
 ```js
 let languages = repos.reduce((acc, crr) => {
@@ -141,6 +145,7 @@ console.log(languages);
 ```
 
 ### Reduce
+
 ```js
 const chartData = [
   {
@@ -161,13 +166,12 @@ const chartData = [
   }
 ];
 const data = chartData.reduce((acc, crr) => {
-   acc[crr['label']] = 1; // {html: 1, js: 1, ts: 1}
-  acc[crr['label']] = acc[crr['label']];//{html: undefined, js: undefined, ts: undefined}
-   acc[crr['label']] = acc[crr['label']] + 1 || 1;//{html: 1, js: 2, ts: 1}
+  acc[crr['label']] = 1; // {html: 1, js: 1, ts: 1}
+  acc[crr['label']] = acc[crr['label']]; //{html: undefined, js: undefined, ts: undefined}
+  acc[crr['label']] = acc[crr['label']] + 1 || 1; //{html: 1, js: 2, ts: 1}
   return acc;
 }, {});
 ```
-
 
 Let's break down the code step by step and explain each part in simple terms:
 
