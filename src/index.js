@@ -9,8 +9,8 @@ import { Auth0Provider } from '@auth0/auth0-react';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Auth0Provider
-    domain='dev-mb40oudze6mddx0h.us.auth0.com'
-    clientId='QInTvvdUPIhIaj0LfUSIJjNGLEwfUEaG'
+    domain={process.env.REACT_APP_AUTH_DOMAIN}
+    clientId={process.env.REACT_APP_AUTH_CLIENT_ID}
     cacheLocation='localstorage' //save the social login in LS
     authorizationParams={{
       redirect_uri: window.location.origin
